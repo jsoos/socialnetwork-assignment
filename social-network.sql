@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Počítač: 127.0.0.1
--- Vytvořeno: Pát 06. dub 2018, 10:57
+-- Vytvořeno: Pát 06. dub 2018, 12:26
 -- Verze serveru: 10.1.29-MariaDB
 -- Verze PHP: 7.2.0
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `posts` (
-  `post_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `content` text COLLATE utf8_czech_ci NOT NULL,
   `post_user` int(11) NOT NULL,
   `post_date` datetime NOT NULL
@@ -39,7 +39,7 @@ CREATE TABLE `posts` (
 -- Vypisuji data pro tabulku `posts`
 --
 
-INSERT INTO `posts` (`post_id`, `content`, `post_user`, `post_date`) VALUES
+INSERT INTO `posts` (`id`, `content`, `post_user`, `post_date`) VALUES
 (1, 'dsd', 0, '0000-00-00 00:00:00'),
 (2, 'dsd', 0, '0000-00-00 00:00:00'),
 (3, 'dsd', 0, '0000-00-00 00:00:00');
@@ -84,7 +84,7 @@ INSERT INTO `users` (`id`, `email`, `password`, `role`) VALUES
 -- Klíče pro tabulku `posts`
 --
 ALTER TABLE `posts`
-  ADD PRIMARY KEY (`post_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Klíče pro tabulku `posts_likes`
@@ -106,7 +106,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pro tabulku `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `post_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pro tabulku `posts_likes`
